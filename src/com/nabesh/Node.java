@@ -52,11 +52,23 @@ public class Node {
         }
     }
 
+    //In post order traversal the root node gets printed last and left node gets printed first
+    public void printPostOrderTraversal(){
+        if (left != null){
+            left.printInOrderTraversal();
+        }
+        if (right != null){
+            right.printInOrderTraversal();
+        }
+        System.out.println(data);
+    }
+
     public static void main(String[] args) {
 	// write your code here
         Node node = new Node(8);
         node.insert(5);
         node.contains(3);
         node.printInOrderTraversal();
+        node.printPostOrderTraversal();
     }
 }
